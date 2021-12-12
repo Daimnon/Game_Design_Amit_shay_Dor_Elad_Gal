@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalScale.x
@@ -206,7 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
 --- !u!1001 &12945301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalScale.x
@@ -290,7 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
 --- !u!1 &56163619
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalScale.x
@@ -489,14 +491,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
 --- !u!43 &195707166
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26386
+  m_Name: pb_Mesh40580
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -943,6 +946,7 @@ GameObject:
   - component: {fileID: 290340878}
   - component: {fileID: 290340877}
   - component: {fileID: 290340876}
+  - component: {fileID: 290340879}
   m_Layer: 0
   m_Name: Plane (3)
   m_TagString: Untagged
@@ -1027,6 +1031,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290340874}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &290340879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290340874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &333879465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,6 +1321,7 @@ GameObject:
   - component: {fileID: 388048603}
   - component: {fileID: 388048602}
   - component: {fileID: 388048601}
+  - component: {fileID: 388048606}
   m_Layer: 0
   m_Name: Movable Intersection 2
   m_TagString: Untagged
@@ -2500,6 +2520,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &388048606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388048600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &394163033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,7 +2633,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26302
+  m_Name: pb_Mesh40488
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2773,7 +2808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2835,7 +2870,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
 --- !u!1 &540863068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,6 +2884,7 @@ GameObject:
   - component: {fileID: 540863071}
   - component: {fileID: 540863070}
   - component: {fileID: 540863069}
+  - component: {fileID: 540863073}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -2932,6 +2969,21 @@ Transform:
   m_Father: {fileID: 1416680901}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
+--- !u!114 &540863073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540863068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &550167609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,7 +3116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3101882664943464830, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
       propertyPath: movementSettings.JumpForce
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3101882664943464830, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
       propertyPath: movementSettings.SpeedInAir
@@ -3082,13 +3134,17 @@ PrefabInstance:
       propertyPath: movementSettings.BackwardSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5934708569697229532, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5934708569697229535, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
     - target: {fileID: 5934708569697229537, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5934708569697229537, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
       propertyPath: m_LocalScale.x
@@ -3150,7 +3206,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26314
+  m_Name: pb_Mesh40500
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3320,6 +3376,7 @@ GameObject:
   - component: {fileID: 573076369}
   - component: {fileID: 573076368}
   - component: {fileID: 573076367}
+  - component: {fileID: 573076370}
   m_Layer: 0
   m_Name: Plane (4)
   m_TagString: Untagged
@@ -3404,6 +3461,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573076365}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &573076370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573076365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &592704272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3825,6 +3897,7 @@ GameObject:
   - component: {fileID: 789888039}
   - component: {fileID: 789888038}
   - component: {fileID: 789888037}
+  - component: {fileID: 789888040}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -3909,6 +3982,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789888035}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &789888040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789888035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &825489608
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,6 +4231,7 @@ GameObject:
   - component: {fileID: 848909756}
   - component: {fileID: 848909755}
   - component: {fileID: 848909754}
+  - component: {fileID: 848909757}
   m_Layer: 0
   m_Name: Plane (3)
   m_TagString: Untagged
@@ -4227,6 +4316,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848909752}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &848909757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848909752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1001 &862886974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4244,7 +4348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalScale.x
@@ -4314,7 +4418,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
 --- !u!1 &904423218
 GameObject:
   m_ObjectHideFlags: 0
@@ -4438,6 +4543,7 @@ GameObject:
   - component: {fileID: 1080247590}
   - component: {fileID: 1080247589}
   - component: {fileID: 1080247588}
+  - component: {fileID: 1080247592}
   m_Layer: 0
   m_Name: Right DownRamp
   m_TagString: Untagged
@@ -4522,6 +4628,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -30, y: 120, z: 0}
+--- !u!114 &1080247592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080247587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1160184751
 GameObject:
   m_ObjectHideFlags: 0
@@ -4534,6 +4655,7 @@ GameObject:
   - component: {fileID: 1160184755}
   - component: {fileID: 1160184754}
   - component: {fileID: 1160184753}
+  - component: {fileID: 1160184756}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -4618,6 +4740,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160184751}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1160184756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160184751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1176650671
 GameObject:
   m_ObjectHideFlags: 0
@@ -4746,6 +4883,7 @@ GameObject:
   - component: {fileID: 1298379898}
   - component: {fileID: 1298379897}
   - component: {fileID: 1298379896}
+  - component: {fileID: 1298379899}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -4830,6 +4968,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298379894}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1298379899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298379894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1310875506
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,7 +5222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalScale.x
@@ -5135,7 +5288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
 --- !u!1 &1381591977
 GameObject:
   m_ObjectHideFlags: 0
@@ -5148,6 +5302,7 @@ GameObject:
   - component: {fileID: 1381591981}
   - component: {fileID: 1381591980}
   - component: {fileID: 1381591979}
+  - component: {fileID: 1381591982}
   m_Layer: 0
   m_Name: Plane (5)
   m_TagString: Untagged
@@ -5232,6 +5387,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381591977}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1381591982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381591977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1388976435
 GameObject:
   m_ObjectHideFlags: 0
@@ -5349,7 +5519,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25990
+  m_Name: pb_Mesh40116
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5519,6 +5689,7 @@ GameObject:
   - component: {fileID: 1395878077}
   - component: {fileID: 1395878076}
   - component: {fileID: 1395878075}
+  - component: {fileID: 1395878078}
   m_Layer: 0
   m_Name: Plane (6)
   m_TagString: Untagged
@@ -5603,6 +5774,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395878073}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1395878078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395878073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1416680900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,6 +5838,7 @@ GameObject:
   - component: {fileID: 1416806650}
   - component: {fileID: 1416806649}
   - component: {fileID: 1416806648}
+  - component: {fileID: 1416806651}
   m_Layer: 0
   m_Name: Plane (4)
   m_TagString: Untagged
@@ -5736,6 +5923,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416806646}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1416806651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416806646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!4 &1418202509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6696129253467223441, guid: cd7c4fcbcbcd41647a5a602c83eb1e9a, type: 3}
@@ -6047,7 +6249,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-209216
+  m_Name: pb_Mesh-241480
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6222,7 +6424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalScale.x
@@ -6292,7 +6494,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
 --- !u!1001 &1593794013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6394,6 +6597,7 @@ GameObject:
   - component: {fileID: 1598890351}
   - component: {fileID: 1598890350}
   - component: {fileID: 1598890349}
+  - component: {fileID: 1598890352}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -6478,6 +6682,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598890347}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1598890352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598890347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1627958410
 GameObject:
   m_ObjectHideFlags: 0
@@ -6829,6 +7048,7 @@ GameObject:
   - component: {fileID: 1710784633}
   - component: {fileID: 1710784632}
   - component: {fileID: 1710784631}
+  - component: {fileID: 1710784636}
   m_Layer: 0
   m_Name: Right Intersection
   m_TagString: Untagged
@@ -8027,6 +8247,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710784636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710784630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1717525139
 GameObject:
   m_ObjectHideFlags: 0
@@ -8040,6 +8275,7 @@ GameObject:
   - component: {fileID: 1717525142}
   - component: {fileID: 1717525141}
   - component: {fileID: 1717525140}
+  - component: {fileID: 1717525145}
   m_Layer: 0
   m_Name: Left Intersection
   m_TagString: Untagged
@@ -9238,6 +9474,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1717525145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717525139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1747885283
 GameObject:
   m_ObjectHideFlags: 0
@@ -9349,6 +9600,7 @@ GameObject:
   - component: {fileID: 1813395606}
   - component: {fileID: 1813395605}
   - component: {fileID: 1813395604}
+  - component: {fileID: 1813395607}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -9433,6 +9685,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813395602}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1813395607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813395602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1844316146
 GameObject:
   m_ObjectHideFlags: 0
@@ -9445,6 +9712,7 @@ GameObject:
   - component: {fileID: 1844316150}
   - component: {fileID: 1844316149}
   - component: {fileID: 1844316148}
+  - component: {fileID: 1844316151}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -9529,6 +9797,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844316146}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1844316151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844316146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1851975141
 GameObject:
   m_ObjectHideFlags: 0
@@ -9640,6 +9923,26 @@ MonoBehaviour:
   IsEnabled: 1
   tags:
   - Wall
+--- !u!1 &1856130132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7804411094206759232, guid: 320a9bd245f97024c9823cdb7e2af875, type: 3}
+  m_PrefabInstance: {fileID: 6676642594147554045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1856130133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856130132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1001 &1905409822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9741,6 +10044,7 @@ GameObject:
   - component: {fileID: 1927427258}
   - component: {fileID: 1927427257}
   - component: {fileID: 1927427256}
+  - component: {fileID: 1927427259}
   m_Layer: 0
   m_Name: Plane (3)
   m_TagString: Untagged
@@ -9825,6 +10129,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927427254}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1927427259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927427254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1 &1938479922
 GameObject:
   m_ObjectHideFlags: 0
@@ -9949,6 +10268,7 @@ GameObject:
   - component: {fileID: 1961172048}
   - component: {fileID: 1961172047}
   - component: {fileID: 1961172046}
+  - component: {fileID: 1961172051}
   m_Layer: 0
   m_Name: Movable Intersection
   m_TagString: Untagged
@@ -11147,6 +11467,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961172051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961172045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!1001 &1982001692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11164,7 +11499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalScale.x
@@ -11230,7 +11565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
 --- !u!1 &2005174191
 GameObject:
   m_ObjectHideFlags: 0
@@ -11504,6 +11840,7 @@ GameObject:
   - component: {fileID: 2075280470}
   - component: {fileID: 2075280469}
   - component: {fileID: 2075280468}
+  - component: {fileID: 2075280472}
   m_Layer: 0
   m_Name: Left DownRamp
   m_TagString: Untagged
@@ -11588,6 +11925,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -30, y: -120, z: 0}
+--- !u!114 &2075280472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075280467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf274f0dcb715845af71d9a69eccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags:
+  - Wall
 --- !u!4 &2098288047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6696129253467223441, guid: cd7c4fcbcbcd41647a5a602c83eb1e9a, type: 3}
@@ -12105,7 +12457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8964363187009658578, guid: 68a8d1af836c8974391365d67fdfa91d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12167,4 +12519,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnabled: 1
-  tags: []
+  tags:
+  - Wall
