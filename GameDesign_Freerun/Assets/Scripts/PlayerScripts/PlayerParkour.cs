@@ -43,14 +43,14 @@ public class PlayerParkour : MonoBehaviour
     public float ClimbTime; //how long the vault takes
     public Transform ClimbEndPoint;
 
-    private RigidbodyFirstPersonController rbfps;
+    private FirstPersonController rbfps;
     private Rigidbody rb;
     private Vector3 RecordedMoveToPosition; //the position of the vault end point in world space to move the player to
     private Vector3 RecordedStartPosition; // position of player right before vault
     // Start is called before the first frame update
     void Start()
     {
-        rbfps = GetComponent<RigidbodyFirstPersonController>();
+        rbfps = GetComponent<FirstPersonController>();
         rb = GetComponent<Rigidbody>();
     }
 

@@ -7,7 +7,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
     #endregion
-    public class RigidbodyFirstPersonController : MonoBehaviour
+    public class FirstPersonController : MonoBehaviour
     {
         #region Serialized Fields
         [SerializeField]
