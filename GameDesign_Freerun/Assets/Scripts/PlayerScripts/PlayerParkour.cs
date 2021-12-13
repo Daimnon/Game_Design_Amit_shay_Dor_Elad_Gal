@@ -141,12 +141,12 @@ public class PlayerParkour : MonoBehaviour
             canwallrun = false;
             upforce = WallRunUpForce;
         }
-        if (WallrunningLeft && !DetectWallL.Obstruction || Input.GetAxisRaw("Vertical") <= 0f || rbfps.relativevelocity.magnitude < 1f) // if there is no wall on the lef tor pressing forward or forward speed < 1 (refer to fpscontroller script)
+        if (WallrunningLeft && !DetectWallL.Obstruction || Input.GetAxisRaw("Vertical") <= 0f || rbfps.Relativevelocity.magnitude < 1f) // if there is no wall on the lef tor pressing forward or forward speed < 1 (refer to fpscontroller script)
         {
             WallrunningLeft = false;
             WallrunningRight = false;
         }
-        if (WallrunningRight && !DetectWallR.Obstruction || Input.GetAxisRaw("Vertical") <= 0f || rbfps.relativevelocity.magnitude < 1f) // same as above
+        if (WallrunningRight && !DetectWallR.Obstruction || Input.GetAxisRaw("Vertical") <= 0f || rbfps.Relativevelocity.magnitude < 1f) // same as above
         {
             WallrunningLeft = false;
             WallrunningRight = false;
@@ -155,12 +155,12 @@ public class PlayerParkour : MonoBehaviour
         if (WallrunningLeft || WallrunningRight) 
         {
             WallRunning = true;
-            rbfps.Wallrunning = true; // this stops the playermovement (refer to fpscontroller script)
+            rbfps.IsWallRunning = true; // this stops the playermovement (refer to fpscontroller script)
         }
         else
         {
             WallRunning = false;
-            rbfps.Wallrunning = false;
+            rbfps.IsWallRunning = false;
         }
 
         if (WallrunningLeft)

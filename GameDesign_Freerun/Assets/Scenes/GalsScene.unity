@@ -499,7 +499,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17816
+  m_Name: pb_Mesh31698
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1192,6 +1192,11 @@ MonoBehaviour:
   IsEnabled: 1
   tags:
   - Wall
+--- !u!1 &367446167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5934708569697229535, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+  m_PrefabInstance: {fileID: 565594130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &368483456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1885,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3101882664943464830, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+      propertyPath: _rb
+      value: 
+      objectReference: {fileID: 565594132}
+    - target: {fileID: 3101882664943464830, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+      propertyPath: _mainCam
+      value: 
+      objectReference: {fileID: 565594131}
+    - target: {fileID: 3101882664943464830, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+      propertyPath: _playerCol
+      value: 
+      objectReference: {fileID: 1928648250}
+    - target: {fileID: 3101882664943464830, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
       propertyPath: detectGround
+      value: 
+      objectReference: {fileID: 1433702819}
+    - target: {fileID: 3101882664943464830, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+      propertyPath: _detectGround
       value: 
       objectReference: {fileID: 1433702819}
     - target: {fileID: 3101882664943464830, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
@@ -1973,6 +1994,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+--- !u!20 &565594131 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5934708570920507452, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+  m_PrefabInstance: {fileID: 565594130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &565594132 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5934708569697229532, guid: 85043aa20ec708842a14605a4e1abb33, type: 3}
+  m_PrefabInstance: {fileID: 565594130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &567775574
 Mesh:
   m_ObjectHideFlags: 0
@@ -8255,8 +8286,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.009119, y: 0.5, z: 3.4585114}
-  m_Center: {x: -7.9962187, y: 0.3, z: -0.010643005}
+  m_Size: {x: 4.009119, y: 1.5000002, z: 3.4585114}
+  m_Center: {x: -7.9962187, y: 0.8000001, z: -0.010643005}
 --- !u!65 &1789043390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8268,8 +8299,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.009562, y: 0.5, z: 3.4585114}
-  m_Center: {x: -2.0042207, y: 0.3, z: -0.010643005}
+  m_Size: {x: 4.009562, y: 1.5000002, z: 3.4585114}
+  m_Center: {x: -2.0042207, y: 0.8000001, z: -0.010643005}
 --- !u!65 &1789043391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8281,8 +8312,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.9997187, y: 0.5, z: 2.5783005}
-  m_Center: {x: -4.9990516, y: 0.3, z: 3.0088997}
+  m_Size: {x: 7.9997187, y: 1.5000002, z: 2.5783005}
+  m_Center: {x: -4.9990516, y: 0.8000001, z: 3.0088997}
 --- !u!65 &1789043392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8294,8 +8325,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.022612, y: 0.5, z: 2.6003075}
-  m_Center: {x: -5.0121527, y: 0.3, z: -3.029974}
+  m_Size: {x: 8.022612, y: 1.5000002, z: 2.6003075}
+  m_Center: {x: -5.0121527, y: 0.8000001, z: -3.029974}
 --- !u!114 &1789043393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8308,7 +8339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b05755e9847654c97497ff37e0526f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCol: {fileID: 1928648250}
+  _player: {fileID: 367446167}
   _platformTr: {fileID: 1789043399}
 --- !u!114 &1789043394
 MonoBehaviour:
@@ -11467,8 +11498,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.009119, y: 0.5, z: 3.4585114}
-  m_Center: {x: -7.9962187, y: 0.3, z: -0.010643005}
+  m_Size: {x: 4.009119, y: 1.5000002, z: 3.4585114}
+  m_Center: {x: -7.9962187, y: 0.8000001, z: -0.010643005}
 --- !u!65 &1961172054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11480,8 +11511,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.009562, y: 0.5, z: 3.4585114}
-  m_Center: {x: -2.0042207, y: 0.3, z: -0.010643005}
+  m_Size: {x: 4.009562, y: 1.5000002, z: 3.4585114}
+  m_Center: {x: -2.0042207, y: 0.8000001, z: -0.010643005}
 --- !u!65 &1961172055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11493,8 +11524,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.9997187, y: 0.5, z: 2.5783005}
-  m_Center: {x: -4.9990516, y: 0.3, z: 3.0088997}
+  m_Size: {x: 7.9997187, y: 1.5000002, z: 2.5783005}
+  m_Center: {x: -4.9990516, y: 0.8000001, z: 3.0088997}
 --- !u!65 &1961172056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11506,8 +11537,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.022612, y: 0.5, z: 2.6003075}
-  m_Center: {x: -5.0121527, y: 0.3, z: -3.029974}
+  m_Size: {x: 8.022612, y: 1.5000002, z: 2.6003075}
+  m_Center: {x: -5.0121527, y: 0.8000001, z: -3.029974}
 --- !u!114 &1961172057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11520,7 +11551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b05755e9847654c97497ff37e0526f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCol: {fileID: 1928648250}
+  _player: {fileID: 367446167}
   _platformTr: {fileID: 1961172050}
 --- !u!114 &1961172058
 MonoBehaviour:
@@ -12228,7 +12259,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-21094
+  m_Name: pb_Mesh31598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
