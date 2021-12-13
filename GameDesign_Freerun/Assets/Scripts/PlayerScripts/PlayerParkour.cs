@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
-public class PlayerController : MonoBehaviour
+public class PlayerParkour : MonoBehaviour
 {
     public float drag_grounded;
     public float drag_inair;
