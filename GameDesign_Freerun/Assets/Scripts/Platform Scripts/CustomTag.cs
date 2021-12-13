@@ -3,14 +3,12 @@ using System.Collections.Generic;
 
 public class CustomTag : MonoBehaviour
 {
-    public bool IsEnabled = true;
-    private void Start()
-    {
-        
-    }
-
     [SerializeField]
     private List<string> tags = new List<string>();
+
+    public bool IsEnabled = true;
+
+    public int Count { get => tags.Count; }
     
     public bool HasTag(string tag)
     {
@@ -30,10 +28,5 @@ public class CustomTag : MonoBehaviour
     public string GetAtIndex(int index)
     {
         return tags[index];
-    }
-
-    public int Count
-    {
-        get { return tags.Count; }
     }
 }

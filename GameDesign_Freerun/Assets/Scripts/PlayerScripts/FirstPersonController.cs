@@ -23,10 +23,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Camera _mainCam;
 
         [SerializeField]
-        private float _forwardSpeed = 4f, _backwardSpeed = 3f, _strafeSpeed = 3f;
-
-        [SerializeField]
-        private float _speedInAir = 0.3f, _jumpForce = 10f;
+        private float _forwardSpeed = 4f, _backwardSpeed = 3f, _strafeSpeed = 3f, _speedInAir = 0.3f, _jumpForce = 10f;
 
         [SerializeField]
         private bool _canRotate, _isGrounded;

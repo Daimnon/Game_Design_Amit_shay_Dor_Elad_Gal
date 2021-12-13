@@ -3,104 +3,91 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-    [Serializable]
     public class MouseLook
     {
-        public float XSensitivity = 2f;
-        public float YSensitivity = 2f;
-        public bool clampVerticalRotation = true;
-        public float MinimumX = -90F;
-        public float MaximumX = 90F;
-        public bool smooth;
-        public float smoothTime = 5f;
+        [SerializeField]
+        private float _xSensitivity = 2f, _ySensitivity = 2f, _minimumX = -90F, _maximumX = 90F, _smoothTime = 5f;
 
-        public Quaternion m_CharacterTargetRot;
-        public Quaternion m_CameraTargetRot;
+        [SerializeField]
+        private bool _smooth, _clampVerticalRotation = true;
+
+        [SerializeField]
+        private Quaternion _characterTargetRot, _cameraTargetRot;
 
         public void Init(Transform character, Transform camera)
         {
-            m_CharacterTargetRot = character.localRotation;
-            m_CameraTargetRot = camera.localRotation;
+            _characterTargetRot = character.localRotation;
+            _cameraTargetRot = camera.localRotation;
         }
 
         public void LookRotation(Transform character, Transform camera)
         {
             Cursor.lockState = CursorLockMode.Locked;
 
-            float yRot = Input.GetAxis("Mouse X") * XSensitivity;
-            float xRot = Input.GetAxis("Mouse Y") * YSensitivity;
+            float yRot = Input.GetAxis("Mouse X") * _xSensitivity;
+            float xRot = Input.GetAxis("Mouse Y") * _ySensitivity;
 
-            m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
-            m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
+            _characterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
+            _cameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
 
-            if (clampVerticalRotation)
-                m_CameraTargetRot = ClampRotationAroundXAxis(m_CameraTargetRot);
+            if (_clampVerticalRotation)
+                _cameraTargetRot = ClampRotationAroundXAxis(_cameraTargetRot);
 
-            if (smooth)
+            if (_smooth)
             {
-                character.localRotation = Quaternion.Slerp(character.localRotation, m_CharacterTargetRot,
-                    smoothTime * Time.deltaTime);
-                camera.localRotation = Quaternion.Slerp(camera.localRotation, m_CameraTargetRot,
-                    smoothTime * Time.deltaTime);
+                character.localRotation = Quaternion.Slerp(character.localRotation, _characterTargetRot,
+                    _smoothTime * Time.deltaTime);
+                camera.localRotation = Quaternion.Slerp(camera.localRotation, _cameraTargetRot,
+                    _smoothTime * Time.deltaTime);
             }
             else
             {
-                character.localRotation = m_CharacterTargetRot;
-                camera.localRotation = m_CameraTargetRot;
+                character.localRotation = _characterTargetRot;
+                camera.localRotation = _cameraTargetRot;
             }
         }
 
         public void LookOveride(Transform character, Transform camera)
         {
-            m_CharacterTargetRot = character.localRotation;
-            m_CameraTargetRot = camera.localRotation;
+            _characterTargetRot = character.localRotation;
+            _cameraTargetRot = camera.localRotation;
 
-            m_CharacterTargetRot.x = 0f;
-            m_CharacterTargetRot.z = 0f;
-            m_CameraTargetRot.z = 0f;
-            m_CameraTargetRot.y = 0f;
+            _characterTargetRot.x = 0f;
+            _characterTargetRot.z = 0f;
+            _cameraTargetRot.z = 0f;
+            _cameraTargetRot.y = 0f;
         }
+
         public void CamGoBackAll(Transform character, Transform camera)
         {
-            m_CameraTargetRot.x = 0f;
-            m_CameraTargetRot.z = 0f;
-            m_CameraTargetRot.y = 0f;
+            _cameraTargetRot.x = 0f;
+            _cameraTargetRot.z = 0f;
+            _cameraTargetRot.y = 0f;
 
-            camera.localRotation = m_CameraTargetRot;
+            camera.localRotation = _cameraTargetRot;
         }
+
         public void CamGoBack(Transform character, Transform camera, float speed)
         {
-            if (m_CameraTargetRot.x > 0)
-            {
-                m_CameraTargetRot.x -= 1f * Time.deltaTime * speed;
-            }
+            if (_cameraTargetRot.x > 0)
+                _cameraTargetRot.x -= 1f * Time.deltaTime * speed;
             
-            if (m_CameraTargetRot.x < 0)
-            {
-                m_CameraTargetRot.x += 1f * Time.deltaTime * speed;
-            }
+            if (_cameraTargetRot.x < 0)
+                _cameraTargetRot.x += 1f * Time.deltaTime * speed;
 
-            if (m_CameraTargetRot.y > 0)
-            {
-                m_CameraTargetRot.y -= 1f * Time.deltaTime * speed;
-            }
+            if (_cameraTargetRot.y > 0)
+                _cameraTargetRot.y -= 1f * Time.deltaTime * speed;
             
-            if (m_CameraTargetRot.y < 0)
-            {
-                m_CameraTargetRot.y += 1f * Time.deltaTime * speed;
-            }
+            if (_cameraTargetRot.y < 0)
+                _cameraTargetRot.y += 1f * Time.deltaTime * speed;
 
-            if (m_CameraTargetRot.z > 0)
-            {
-                m_CameraTargetRot.z -= 1f * Time.deltaTime * speed;
-            }
+            if (_cameraTargetRot.z > 0)
+                _cameraTargetRot.z -= 1f * Time.deltaTime * speed;
             
-            if (m_CameraTargetRot.z < 0)
-            {
-                m_CameraTargetRot.z += 1f * Time.deltaTime * speed;
-            }
+            if (_cameraTargetRot.z < 0)
+                _cameraTargetRot.z += 1f * Time.deltaTime * speed;
 
-            camera.localRotation = m_CameraTargetRot;
+            camera.localRotation = _cameraTargetRot;
         }
 
         Quaternion ClampRotationAroundXAxis(Quaternion q)
@@ -112,7 +99,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             float angleX = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.x);
 
-            angleX = Mathf.Clamp(angleX, MinimumX, MaximumX);
+            angleX = Mathf.Clamp(angleX, _minimumX, _maximumX);
 
             q.x = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleX);
 
