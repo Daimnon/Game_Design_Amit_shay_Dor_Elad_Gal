@@ -168,7 +168,7 @@ public class PlayerParkour : MonoBehaviour
             _playerRb.velocity = new Vector3(_playerRb.velocity.x, _upForce, _playerRb.velocity.z);
 
             //so the player will have a curve like wallrun, upforce from line 136
-            _upForce -= _wallRunUpForceDecreaseRate * Time.deltaTime; 
+            _upForce -= Mathf.Lerp(_playerRb.velocity.y, _wallRunUpForceDecreaseRate * Time.deltaTime, Time.deltaTime * 5);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {

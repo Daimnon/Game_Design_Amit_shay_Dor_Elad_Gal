@@ -8,23 +8,26 @@ public class DetectObs : MonoBehaviour
     private string _objectTagName = "";
 
     [SerializeField]
+    private float _parkourTimeLimit = 2;
+
+    [SerializeField]
     public bool Obstruction;
 
     private GameObject _object;
     private Collider _currentCol;
+    private float _parkourTime = 0;
 
     void OnTriggerStay(Collider col)
     {
-        if (_objectTagName != "" && !Obstruction)
+        if (_objectTagName != "" && !Obstruction && col.GetComponent<CustomTag>().IsEnabled && !(_parkourTime >= _parkourTimeLimit))
         {
-            if (col.GetComponent<CustomTag>().IsEnabled)
+            //_parkourTime += 10 * Time.deltaTime;
+
+            if (col != null && !col.isTrigger && col.GetComponent<CustomTag>().HasTag(_objectTagName)) // checks if the object has the right tag
             {
-                if (col != null && !col.isTrigger && col.GetComponent<CustomTag>().HasTag(_objectTagName)) // checks if the object has the right tag
-                {
-                    Obstruction = true;
-                    _object = col.gameObject;
-                    _currentCol = col;
-                }
+                Obstruction = true;
+                _object = col.gameObject;
+                _currentCol = col;
             }
         }
 

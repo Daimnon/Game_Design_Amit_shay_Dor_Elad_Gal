@@ -23,7 +23,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Camera _mainCam;
 
         [SerializeField]
-        private float _forwardSpeed = 4f, _backwardSpeed = 3f, _strafeSpeed = 3f, _speedInAir = 0.3f, _jumpForce = 10f;
+        private float _forwardSpeed = 3f, _sprintSpeed = 5f, _backwardSpeed = 3f, _strafeSpeed = 3f, _speedInAir = 0.3f, _jumpForce = 10f;
 
         [SerializeField]
         private bool _canRotate, _isGrounded;
@@ -94,6 +94,60 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             return input;
         }
+
+        private void GetSpeedInAir(Vector2 input, Vector3 inputVector)
+        {
+            if (Input.GetAxisRaw("Vertical") > 0.3f && Input.GetKey(KeyCode.LeftShift))
+                _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * (_speedInAir / 1.5f * 1.2f) * Mathf.Abs(inputVector.z));
+
+            else if (Input.GetAxisRaw("Vertical") > 0.3f)
+                _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * _speedInAir / 1.5f * Mathf.Abs(inputVector.z));
+
+
+            if (Input.GetAxisRaw("Vertical") < -0.3f)
+                _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -_speedInAir * Mathf.Abs(inputVector.z));
+
+
+            if (Input.GetAxisRaw("Horizontal") > 0.5f && Input.GetKey(KeyCode.LeftShift))
+                _rb.AddRelativeForce(Time.deltaTime * 1000f * (_speedInAir / 1.5f * 1.2f) * Mathf.Abs(inputVector.x), 0, 0);
+
+            else if (Input.GetAxisRaw("Horizontal") > 0.5f)
+                _rb.AddRelativeForce(Time.deltaTime * 1000f * _speedInAir / 1.5f * Mathf.Abs(inputVector.x), 0, 0);
+
+            if (Input.GetAxisRaw("Horizontal") < -0.5f)
+                _rb.AddRelativeForce(Time.deltaTime * 1000f * -_speedInAir * Mathf.Abs(inputVector.x), 0, 0);
+        }
+
+        private void GetSpeedOnGround(Vector2 input, Vector3 inputVector)
+        {
+            //run
+            if (Input.GetAxisRaw("Vertical") > 0.3f && Input.GetKey(KeyCode.LeftShift))
+                _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * _sprintSpeed * Mathf.Abs(inputVector.z));
+            //walk
+            else if (Input.GetAxisRaw("Vertical") > 0.3f)
+                _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * _forwardSpeed * Mathf.Abs(inputVector.z));
+
+
+            if (Input.GetAxisRaw("Vertical") < -0.3f && Input.GetKey(KeyCode.LeftShift))
+                _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -(_sprintSpeed / 1.2f) * Mathf.Abs(inputVector.z));
+
+            else if (Input.GetAxisRaw("Vertical") < -0.3f)
+                _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -_backwardSpeed * Mathf.Abs(inputVector.z));
+
+
+            if (Input.GetAxisRaw("Horizontal") > 0.5f && Input.GetKey(KeyCode.LeftShift))
+                _rb.AddRelativeForce(Time.deltaTime * 1000f * (_sprintSpeed / 1.1f) * Mathf.Abs(inputVector.x), 0, 0);
+
+            else if (Input.GetAxisRaw("Horizontal") > 0.5f)
+                _rb.AddRelativeForce(Time.deltaTime * 1000f * _strafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
+
+
+            if (Input.GetAxisRaw("Horizontal") < -0.5f && Input.GetKey(KeyCode.LeftShift))
+                _rb.AddRelativeForce(Time.deltaTime * 1000f * -(_sprintSpeed / 1.1f) * Mathf.Abs(inputVector.x), 0, 0);
+
+            else if (Input.GetAxisRaw("Horizontal") < -0.5f)
+                _rb.AddRelativeForce(Time.deltaTime * 1000f * -_strafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
+        }
         
         private void GroundCheck()
         {
@@ -108,37 +162,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             //grounded
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && _isGrounded && !IsWallRunning)
-            {
-                if (Input.GetAxisRaw("Vertical") > 0.3f)
-                    _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * _forwardSpeed * Mathf.Abs(inputVector.z));
-
-                if (Input.GetAxisRaw("Vertical") < -0.3f)
-                    _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -_backwardSpeed * Mathf.Abs(inputVector.z));
-
-                if (Input.GetAxisRaw("Horizontal") > 0.5f)
-                    _rb.AddRelativeForce(Time.deltaTime * 1000f * _strafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
-
-                if (Input.GetAxisRaw("Horizontal") < -0.5f)
-                    _rb.AddRelativeForce(Time.deltaTime * 1000f * -_strafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
-            }
+                GetSpeedOnGround(input, inputVector);
         }
 
         private void SpeedInAir(Vector2 input, Vector3 inputVector)
-        {
+        { 
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && !_isGrounded && !IsWallRunning)
-            {
-                if (Input.GetAxisRaw("Vertical") > 0.3f)
-                    _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * _speedInAir * Mathf.Abs(inputVector.z));
-
-                if (Input.GetAxisRaw("Vertical") < -0.3f)
-                    _rb.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -_speedInAir * Mathf.Abs(inputVector.z));
-
-                if (Input.GetAxisRaw("Horizontal") > 0.5f)
-                    _rb.AddRelativeForce(Time.deltaTime * 1000f * _speedInAir * Mathf.Abs(inputVector.x), 0, 0);
-
-                if (Input.GetAxisRaw("Horizontal") < -0.5f)
-                    _rb.AddRelativeForce(Time.deltaTime * 1000f * -_speedInAir * Mathf.Abs(inputVector.x), 0, 0);
-            }
+                GetSpeedInAir(input, inputVector);
         }
 
         public void NormalJump()
