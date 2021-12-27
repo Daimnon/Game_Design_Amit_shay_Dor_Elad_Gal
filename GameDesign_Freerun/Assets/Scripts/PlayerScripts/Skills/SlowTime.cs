@@ -8,13 +8,13 @@ public class SlowTime : MonoBehaviour
     private float _slowTimeModifier = 0.5f, _slowTimeSmootingTime = 1f, _slowTimeLength = 3f;
 
     [SerializeField]
+    private bool _isSlowingTime;
+
     private float _previousTimeScale, _slowTimer;
 
-    [SerializeField]
-    private bool _isSlowingTime;
     private void Update()
     {
-        if (Input.GetKey(KeyCode.R) && !_isSlowingTime)
+        if (Input.GetKeyDown(KeyCode.R) && !_isSlowingTime)
         {
             _isSlowingTime = true;
             _previousTimeScale = Time.timeScale;
@@ -31,7 +31,7 @@ public class SlowTime : MonoBehaviour
                 _slowTimer = 0;
             }
 
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 Time.timeScale = Mathf.Lerp(_slowTimeModifier, _previousTimeScale, _slowTimeSmootingTime);
                 _isSlowingTime = false;

@@ -6,6 +6,9 @@ public class PlayerParkour : MonoBehaviour
 {
 
     [SerializeField]
+    private FirstPersonController _playerController;
+    
+    [SerializeField]
     private DetectObs _detectVaultObject, _detectClimbObject; //checks for..
     
     [SerializeField]
@@ -14,9 +17,6 @@ public class PlayerParkour : MonoBehaviour
     [SerializeField]
     private DetectObs _detectWallLeft, _detectWallRight; //detects for a wall on player sides
 
-    [SerializeField]
-    private FirstPersonController _playerController;
-    
     [SerializeField]
     private Transform _vaultEndPoint, _climbEndPoint;
     
@@ -156,11 +156,13 @@ public class PlayerParkour : MonoBehaviour
         else
             _mainCamAnimator.SetBool("WallLeft", false);
         
+
         if (_wallrunningRight)
             _mainCamAnimator.SetBool("WallRight", true);
 
         else
             _mainCamAnimator.SetBool("WallRight", false);
+
 
         if (_wallRunning)
         {
