@@ -31,6 +31,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         #region Private Fields
         private float _currentTargetSpeed = 8f, _yRotation;
+        private bool _isMouseLocked = true;
         #endregion
 
         #region Public Fields
@@ -58,6 +59,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (_isGrounded)
                 if (Input.GetKeyDown(KeyCode.Space))
                     NormalJump();
+
+            if (Input.GetKeyDown(KeyCode.LeftAlt))
+            {
+                if (_isMouseLocked)
+                {
+                    _isMouseLocked = false;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                else
+                {
+                    _isMouseLocked = true;
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+            }
         }
 
         private void FixedUpdate()
@@ -216,6 +231,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             // get the rotation before it's changed
             float oldYRotation = transform.eulerAngles.y;
+
+            if (_isMouseLocked)
+                MouseLook.IsMouseLocked = true;
+            else
+                MouseLook.IsMouseLocked = false;
 
             MouseLook.LookRotation(transform, _mainCam.transform);
         }

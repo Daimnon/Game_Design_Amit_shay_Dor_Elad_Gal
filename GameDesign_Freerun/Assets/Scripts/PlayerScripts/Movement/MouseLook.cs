@@ -14,6 +14,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField]
         private Quaternion _characterTargetRot, _cameraTargetRot;
 
+        public bool IsMouseLocked = true;
+
         public void Init(Transform character, Transform camera)
         {
             _characterTargetRot = character.localRotation;
@@ -22,7 +24,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void LookRotation(Transform character, Transform camera)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            if (IsMouseLocked)
+                Cursor.lockState = CursorLockMode.Locked;
+            else
+                Cursor.lockState = CursorLockMode.None;
 
             float yRot = Input.GetAxis("Mouse X") * _xSensitivity;
             float xRot = Input.GetAxis("Mouse Y") * _ySensitivity;
